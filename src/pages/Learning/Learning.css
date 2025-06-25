@@ -1,0 +1,110 @@
+.main {
+  flex: 1;
+  padding: 3rem 0;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding-top: 80px;
+}
+
+.title-section {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.graduation-cap {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.title-section h2 {
+  font-size: 2.5rem;
+  color: #333;
+  font-weight: 700;
+}
+
+.topics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 2rem 2rem;
+}
+
+.topic-card {
+  height: 200px;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.topic-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.topic-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.topic-content h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+/* Topic-specific backgrounds */
+.animals {
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url('https://static.vecteezy.com/system/resources/previews/013/074/425/non_2x/flat-exotic-animal-background-free-vector.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.food {
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url('https://media.istockphoto.com/id/637766710/photo/fruit-background.jpg?s=612x612&w=0&k=20&c=cFFBWseu6XmStHuwxxo3QB6eEO5vMf0eADizajOBWOc=');
+  background-size: cover;
+  background-position: center;
+}
+
+.colors {
+  background: linear-gradient(
+    45deg,
+    #ff6b6b 0%,
+    #4ecdc4 16.66%,
+    #45b7d1 33.33%,
+    #96ceb4 50%,
+    #feca57 66.66%,
+    #ff9ff3 83.33%,
+    #54a0ff 100%
+  );
+}
+
+.family {
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200"><rect fill="%2382ca9d" width="400" height="200"/><circle fill="%23f8c471" cx="120" cy="60" r="20"/><circle fill="%23f8c471" cx="180" cy="60" r="20"/><circle fill="%23f8c471" cx="240" cy="60" r="15"/><rect fill="%2358d68d" x="0" y="150" width="400" height="50"/></svg>');
+  background-size: cover;
+  background-position: center;
+}
+
+.travel {
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200"><rect fill="%2387ceeb" width="400" height="200"/><rect fill="%23f4d03f" x="0" y="150" width="400" height="50"/><rect fill="%23e67e22" x="150" y="120" width="80" height="40" rx="20"/><circle fill="%23229954" cx="80" cy="100" r="30"/></svg>');
+  background-size: cover;
+  background-position: center;
+}
+
+.weather {
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200"><rect fill="%2387ceeb" width="400" height="200"/><circle fill="%23f4d03f" cx="320" cy="60" r="25"/><ellipse fill="%23ecf0f1" cx="150" cy="80" rx="40" ry="25"/><ellipse fill="%23bdc3c7" cx="200" cy="90" rx="35" ry="20"/></svg>');
+  background-size: cover;
+  background-position: center;
+}

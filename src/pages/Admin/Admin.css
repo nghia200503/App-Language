@@ -1,0 +1,64 @@
+.admin-container {
+  max-width: 500px;
+  margin: 100px auto;
+  background: #fff;
+  border-radius: 12px;
+  padding: 40px 32px 48px 32px;
+  box-shadow: 0 2px 12px #0001;
+  text-align: center;
+}
+
+.admin-btn-group {
+  display: flex;
+  gap: 32px;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.admin-main-btn {
+  background: #667eea;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 18px 36px;
+  font-size: 1.15rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  box-shadow: 0 2px 8px #667eea22;
+}
+
+.admin-main-btn:hover {
+  background: #5a67d8;
+  transform: translateY(-2px) scale(1.04);
+}
+
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.admin-logout-btn {
+  background: linear-gradient(90deg, #f56565 0%, #ed64a6 100%);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 26px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 8px #f5656522;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.admin-logout-btn:hover {
+  background: linear-gradient(90deg, #e53e3e 0%, #d53f8c 100%);
+  transform: translateY(-2px) scale(1.04);
+}
+.admin-logout-btn.bottom {
+  display: block;
+  margin: 60px auto 0 auto;
+  width: 220px;
+}
