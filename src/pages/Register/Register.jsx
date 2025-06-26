@@ -10,6 +10,7 @@ import {
 import { app } from "../../../firebase";
 import { doc, setDoc, getDoc } from "firebase/firestore";
 import { db } from "../../../firebase";
+import { FcGoogle } from "react-icons/fc";
 
 export default function RegisterPage() {
   const [formData, setFormData] = useState({
@@ -186,12 +187,10 @@ export default function RegisterPage() {
               </div>
 
               <div className="social-login">
-                <button
-                  className="social-btn google"
-                  type="button"
-                  onClick={handleGoogleRegister}
-                >
-                  <span>🔍</span>
+                <button className="social-btn google" type="button" onClick={handleGoogleRegister}>
+                  <span>
+                    <FcGoogle className="google-icon" />
+                  </span>
                   Đăng ký với Google
                 </button>
               </div>

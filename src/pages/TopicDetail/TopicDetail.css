@@ -111,8 +111,42 @@
     grid-template-columns: repeat(3, 1fr);
   }
 }
+
 @media (max-width: 700px) {
   .flashcard-grid {
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .container {
+    padding: 10px !important;
+  }
+  .flashcard {
+    width: 100%;
+    min-width: 0;
+    max-width: 400px;
+    margin: 0 auto;
+    height: 200px;
+    padding: 0;
+  }
+  .flashcard-front, .flashcard-back {
+    padding: 16px;
+  }
+}
+
+/* Đảm bảo các thành phần không bị ẩn, không bị tràn khi thu nhỏ */
+@media (max-width: 400px) {
+  .flashcard {
+    max-width: 98vw;
+    height: 170px;
+  }
+  .flashcard-front, .flashcard-back {
+    padding: 8px;
+    font-size: 0.95em;
+  }
+  .back-button {
+    font-size: 0.95rem;
+    padding: 8px 0;
   }
 }

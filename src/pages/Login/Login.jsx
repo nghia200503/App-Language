@@ -10,6 +10,7 @@ import {
 import { app } from "../../../firebase";
 import { doc, setDoc, getDoc } from "firebase/firestore";
 import { db } from "../../../firebase";
+import { FcGoogle } from "react-icons/fc";
 
 export default function LoginPage() {
   const navigate = useNavigate();
@@ -172,7 +173,7 @@ export default function LoginPage() {
                   onClick={handleGoogleLogin}
                   type="button"
                 >
-                  <span>🔍</span>
+                  <span><FcGoogle className="google-icon"/></span>
                   Đăng nhập với Google
                 </button>
               </div>

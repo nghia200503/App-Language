@@ -242,7 +242,7 @@
   }
 
   .main-content {
-    padding: 1rem;
+    padding: 80px 20px;
   }
 
   .hero-text h1 {
@@ -259,4 +259,6 @@
     text-align: center;
   }
 }
-
+.google-icon {
+  font-size: 30px;
+}

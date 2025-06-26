@@ -218,7 +218,7 @@
 
 @media (max-width: 640px) {
   .profile-container {
-    margin: 20px;
+    margin: 80px 20px;
     max-width: none;
   }
 
