@@ -1,9 +1,18 @@
-import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import { getAuth, signOut } from "firebase/auth";
 import "./Admin.css";
 
 export default function Admin() {
   const navigate = useNavigate();
+  const location = useLocation();
+
+  useEffect(() => {
+  const role = localStorage.getItem("role");
+  if (role !== "admin") {
+    navigate("/learning");
+  }
+}, [navigate, location]);
 
   const handleLogout = async () => {
     const auth = getAuth();

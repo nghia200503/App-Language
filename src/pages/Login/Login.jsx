@@ -52,8 +52,9 @@ export default function LoginPage() {
           role: "user",
         });
       }
-      // Lấy role và chuyển hướng
+      // Lấy role và lưu vào localStorage
       const role = userSnap.exists() ? userSnap.data().role : "user";
+      localStorage.setItem("role", role);
       if (role === "admin") {
         navigate("/admin");
       } else {
@@ -66,32 +67,33 @@ export default function LoginPage() {
 
   // Đăng nhập bằng Google
   const handleGoogleLogin = async () => {
-  setError("");
-  const provider = new GoogleAuthProvider();
-  try {
-    const userCredential = await signInWithPopup(auth, provider);
-    const user = userCredential.user;
-    // Kiểm tra và lưu vào Firestore nếu chưa có
-    const userRef = doc(db, "users", user.uid);
-    const userSnap = await getDoc(userRef);
-    if (!userSnap.exists()) {
-      await setDoc(userRef, {
-        email: user.email,
-        displayName: user.displayName || "",
-        role: "user"
-      });
+    setError("");
+    const provider = new GoogleAuthProvider();
+    try {
+      const userCredential = await signInWithPopup(auth, provider);
+      const user = userCredential.user;
+      // Kiểm tra và lưu vào Firestore nếu chưa có
+      const userRef = doc(db, "users", user.uid);
+      const userSnap = await getDoc(userRef);
+      if (!userSnap.exists()) {
+        await setDoc(userRef, {
+          email: user.email,
+          displayName: user.displayName || "",
+          role: "user"
+        });
+      }
+      // Lấy role và lưu vào localStorage
+      const role = userSnap.exists() ? userSnap.data().role : "user";
+      localStorage.setItem("role", role);
+      if (role === "admin") {
+        navigate("/admin");
+      } else {
+        navigate("/learning");
+      }
+    } catch (err) {
+      setError("Đăng nhập Google thất bại!");
     }
-    // Lấy role và chuyển hướng
-    const role = userSnap.exists() ? userSnap.data().role : "user";
-    if (role === "admin") {
-      navigate("/admin");
-    } else {
-      navigate("/learning");
-    }
-  } catch (err) {
-    setError("Đăng nhập Google thất bại!");
-  }
-};
+  };
 
   return (
     <div className="login-container">

@@ -12,6 +12,7 @@ import Profile from "./pages/Profile/Profile";
 import Test from "./pages/Test/Test";
 import VocabularyManager from "./pages/VocabularyManager/VocabularyManager";
 import UserManager from "./pages/UserManager/UserManager";
+import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
 
 function App() {
   const location = useLocation();
@@ -34,9 +35,32 @@ function App() {
         <Route path="/topic/:slug" element={<TopicDetail />} />
         <Route path="/test" element={<Test />} />
         <Route path="/profile" element={<Profile />} />
-        <Route path="/admin" element={<Admin />} />
-        <Route path="/admin/vocabulary" element={<VocabularyManager />} />
-        <Route path="/admin/user" element={<UserManager />} />
+
+        {/* Các route admin được bảo vệ */}
+        <Route
+          path="/admin"
+          element={
+            <ProtectedRoute>
+              <Admin />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/admin/vocabulary"
+          element={
+            <ProtectedRoute>
+              <VocabularyManager />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/admin/user"
+          element={
+            <ProtectedRoute>
+              <UserManager />
+            </ProtectedRoute>
+          }
+        />
       </Routes>
       {!isAdminPage && <Footer />}
     </>

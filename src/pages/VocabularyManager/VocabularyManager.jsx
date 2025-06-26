@@ -29,6 +29,14 @@ export default function VocabularyManager() {
     fetchTopics();
   }, []);
 
+  // Kiểm tra quyền truy cập
+//   useEffect(() => {
+//   const role = localStorage.getItem("role");
+//   if (role !== "admin") {
+//     navigate("/learning");
+//   }
+// }, [navigate, location]);
+
   // Load words when topic selected
   useEffect(() => {
     async function fetchWords() {

@@ -8,6 +8,13 @@ export default function UserManager() {
   const [userRoleEditIdx, setUserRoleEditIdx] = useState(null);
   const [userRole, setUserRole] = useState("");
 
+//   useEffect(() => {
+//   const role = localStorage.getItem("role");
+//   if (role !== "admin") {
+//     navigate("/learning");
+//   }
+// }, [navigate, location]);
+
   // Load users
   useEffect(() => {
     async function fetchUsers() {
