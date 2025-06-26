@@ -7,7 +7,6 @@ import Login from "./pages/Login/Login";
 import { Route, Routes, useLocation } from "react-router-dom";
 import Register from "./pages/Register/Register";
 import TopicDetail from "./pages/TopicDetail/TopicDetail";
-import "./App.css"; 
 import Admin from "./pages/Admin/Admin";
 import Profile from "./pages/Profile/Profile";
 import Test from "./pages/Test/Test";

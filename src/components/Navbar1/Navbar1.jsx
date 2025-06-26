@@ -9,7 +9,6 @@ function Navbar1() {
   const navigate = useNavigate();
 
   const navItems = [
-    { label: "Trang chủ", path: "/" },
     { label: "Học từ vựng", path: "/learning" },
     { label: "Kiểm tra", path: "/test" },
     { label: "Giới thiệu", path: "/about" },

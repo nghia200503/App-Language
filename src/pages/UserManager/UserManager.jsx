@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { collection, getDocs, doc, setDoc } from "firebase/firestore";
+import { collection, getDocs, doc, setDoc, deleteDoc } from "firebase/firestore";
 import { db } from "../../../firebase";
 import "./UserManager.css";
 
@@ -29,6 +29,15 @@ export default function UserManager() {
     const snap = await getDocs(collection(db, "users"));
     setUsers(snap.docs.map(doc => ({ id: doc.id, ...doc.data() })));
     setUserRoleEditIdx(null);
+  };
+
+  // Xóa user
+  const handleDeleteUser = async (idx) => {
+    const user = users[idx];
+    if (window.confirm("Bạn có chắc muốn xóa người dùng này?")) {
+      await deleteDoc(doc(db, "users", user.id));
+      setUsers(users.filter((_, i) => i !== idx));
+    }
   };
 
   return (
@@ -67,7 +76,10 @@ export default function UserManager() {
                     <button className="admin-cancel-btn" onClick={() => setUserRoleEditIdx(null)}>Hủy</button>
                   </>
                 ) : (
-                  <button className="admin-edit-btn" onClick={() => handleEditUserRole(idx)}>Đổi vai trò</button>
+                  <>
+                    <button className="admin-edit-btn" onClick={() => handleEditUserRole(idx)}>Đổi vai trò</button>
+                    <button className="admin-delete-btn" onClick={() => handleDeleteUser(idx)}>Xóa</button>
+                  </>
                 )}
               </td>
             </tr>
